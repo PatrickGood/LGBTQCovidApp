@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+
+
+<h2>Page View Report</h2>
+
+
+{% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %}
+
+</div>
+
+{% endblock %}
