@@ -2,3 +2,5 @@ django
 gunicorn
 django-heroku
 plotly
+pandas
+numpy==1.19.3

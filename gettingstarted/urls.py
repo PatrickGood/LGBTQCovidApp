@@ -32,8 +32,28 @@ import lgbtqcovid.views
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    path("", hello.views.index, name="index"),
-    path("db/", hello.views.db, name="db"),
+    path("", lgbtqcovid.views.index, name="index"),
+    path("patient/", lgbtqcovid.views.patient, name="patient"),
     path("dashboard/", lgbtqcovid.views.dashboard, name="dashboard"),
+    path("old/", hello.views.index, name="oldindex"),
+    path("old/db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
 ]
+
+
+
+
+# from django.urls import path
+# from . import views
+#
+# app_name = 'post'
+# urlpatterns=[
+#     path('', views.index , name='index'),
+#     path('blog/', views.blog , name='blog'),]
+
+# from django.urls import path, include
+#
+# urlpatterns=[
+# path('post/', include('post.urls'),]
+# <a href="{% url 'post:index' %}">Index</a>
+# <a href="{% url 'post:blog' %}">Blog</a>

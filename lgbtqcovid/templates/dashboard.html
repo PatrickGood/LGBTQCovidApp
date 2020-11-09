@@ -2,16 +2,43 @@
 {% load static %}
 
 {% block content %}
-  <div class="container">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div class="container">
 
 
-<h2>Page View Report</h2>
 
-
+{% if hist_lgbt_cases_map_fig_div %}
 {% autoescape off %}
-  {{ plot_div }}
+  {{ hist_lgbt_cases_map_fig_div|safe }}
   {% endautoescape %}
+{% else %}
+<p>No graph was provided.</p>
+{% endif %}
 
-</div>
+{% if curr_lgbt_cases_pie_fig_div %}
+  {% autoescape off %}
+  {{ curr_lgbt_cases_pie_fig_div|safe }}
+  {% endautoescape %}
+{% else %}
+<p>No graph was provided.</p>
+{% endif %}
+
+{% if hist_lgbt_deaths_map_fig_div %}
+  {% autoescape off %}
+  {{ hist_lgbt_deaths_map_fig_div|safe }}
+  {% endautoescape %}
+{% else %}
+<p>No graph was provided.</p>
+{% endif %}
+
+{% if curr_lgbt_deaths_pie_fig_div %}
+{% autoescape off %}
+  {{ curr_lgbt_deaths_pie_fig_div|safe }}
+  {% endautoescape %}
+{% else %}
+<p>No graph was provided.</p>
+{% endif %}
+
+    </div>
 
 {% endblock %}
