@@ -2,12 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from plotly.offline import plot
 from plotly.graph_objs import Scatter
-from .models import Greeting
+#from .models import Greeting
 
 import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+
+from fhirclient import client
+import fhirclient.models.patient as p
+import fhirclient.models.observation as o
 
 
 # Create your views here.
@@ -158,5 +162,111 @@ def dashboard(request):
 
 
 def patient(request):
+
+
+
     return render(request, "patient.html")
 
+
+
+
+
+
+
+
+
+
+
+def get_patient_name(pt):
+    name = pt.name
+    if name:
+        given = name[0].given
+        if(given):
+            given_name = given[0]
+        if(name[0].family):
+            family_name = name[0].family
+        return given_name + " " + family_name
+    else:
+        return "anonymous"
+def get_patient_marital_status(pt):
+    if pt.maritalStatus:
+        switcher = {
+            "A": "Annulled",
+            "D": "Divorced",
+            "I": "Interlocutory",
+            "L": "Legally Separated",
+            "M": "Married",
+            "C": "Common Law",
+            "P": "Polygamous",
+            "T": "Domestic partner",
+            "U": "unmarried",
+            "S": "Never Married",
+            "W": "Widowed"
+        }
+        return switcher.get(pt.maritalStatus.coding[0].code, "Not Specified")
+    else:
+        return "Not Specified"
+def get_patient_address(pt):
+    if len(pt.address) > 0:
+        address = pt.address[0]
+        if address.country:
+            country = address.country
+        else:
+            country = ""
+
+        if address.state:
+            state = address.state
+        else:
+            state = ""
+
+        if address.city:
+            city = address.city
+        else:
+            city = ""
+
+        if address.postalCode:
+            postal = address.postalCode
+        else:
+            postal = ""
+
+        if address.line and len(address.line) > 0:
+            line = address.line[0]
+        else:
+            line = ""
+        return line + '<br>' + city +', ' + state +' '+ postal + '<br>' + country
+    else:
+        return "Not Specified"
+
+def get_patient_geo_location(pt):
+    if len(pt.address) > 0:
+        address = pt.address[0]
+        if address.extension and len(address.extension) > 0:
+            geo_location = address.extension[0];
+            if(geo_location.extension):
+                lat = geo_location.extension[0].valueDecimal;
+                lon = geo_location.extension[1].valueDecimal;
+                return str(lat) + ',' + str(lon)
+            else:
+                return "Not Specified"
+        return "Not Specified"
+    return "Not Specified"
+
+if __name__ == "__main__":
+    settings = {
+    'app_id': 'LGBTQCovidReporting',
+    'api_base': 'https://r4.smarthealthit.org'
+    }
+
+    smart = client.FHIRClient(settings=settings)
+    # if not smart.ready:
+    #     smart.prepare()
+    #     smart.ready
+    #     smart.prepare()
+    #     smart.authorize_url
+    patient = p.Patient.read('06895d41-5937-4e83-9f3d-0af09db31c69', smart.server)
+    patient_name = get_patient_name(patient)
+    patient_ms = get_patient_marital_status(patient)
+    patient_address = get_patient_address(patient)
+    patient_geo_location = get_patient_geo_location(patient)
+
+    patient.birthDate.isostring
