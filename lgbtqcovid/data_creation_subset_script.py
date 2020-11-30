@@ -133,6 +133,8 @@ def create_data(smart):
             new_condition = condition_obj.to_fhir_obj()
             new_observation_return = new_observation.create(smart.server)
             new_condition_return = new_condition.create(smart.server)
+            if i == 10:
+                break
         row_end = "end"
     timee = time() - timeb
     end = "end"

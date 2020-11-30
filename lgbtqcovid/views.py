@@ -6,20 +6,15 @@ import requests
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from plotly.offline import plot
-from plotly.graph_objs import Scatter
-# from .models import Greeting
-import fhirclient.models.fhirabstractbase as fab
-import fhirclient.models.fhirabstractresource as far
+
 
 import pandas as pd
 import plotly.express as px
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
+
 
 from fhirclient import client
 import fhirclient.models.patient as p
 import fhirclient.models.observation as o
-import fhirclient.models.bundle as b
 
 # Create your views here.
 from lgbtqcovid.patient_form import PatientSearchForm
@@ -33,7 +28,7 @@ def index(request):
 
 def get_dashboard_historical_data():
     # Read in Data
-    covid_url = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv'
+    covid_url = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv'
     lgbt_url = 'https://raw.githubusercontent.com/PatrickGood/lgbt-covid-data/main/lgbt_populations.csv'
     state_abbr = 'https://raw.githubusercontent.com/PatrickGood/lgbt-covid-data/main/state_abbreviations.csv'
 
@@ -73,7 +68,7 @@ def get_dashboard_historical_data():
     final_lgbt_covid_data_history['lgbt_state_deaths_density_for_date'] = final_lgbt_covid_data_history['lgbt_deaths'] / \
                                                                           final_lgbt_covid_data_history[
                                                                               'us_total_lgbt_deaths_for_date'] * 100
-    final_lgbt_covid_data_current = lgbt_covid_data_history[lgbt_covid_data_history['date'] == '2020-09-19']
+    final_lgbt_covid_data_current = lgbt_covid_data_history[lgbt_covid_data_history['date'] == '2020-11-28']
     final_lgbt_covid_data_current = final_lgbt_covid_data_current[current_columns].sort_values(by=['fips'])
     total_lgbt_cases = final_lgbt_covid_data_current['lgbt_cases'].sum()
     total_lgbt_deaths = final_lgbt_covid_data_current['lgbt_deaths'].sum()
@@ -265,15 +260,15 @@ def get_dashboard_FHIR_current_data():
                 patient = p.Patient(entry['resource'])
                 state = None
                 district = None
-                if len(patient.address) > 0:
+                if patient.address is not None and len(patient.address) > 0:
                     address = patient.address[0]
                     if address.state:
                         state = address.state
                     if address.district:
                         district = address.district
-                key = state + district
-                fhir_positive_lgbt_cases_lst.append([key, 1])
-        while(any(obj['relation'] == 'next' for obj in result['link']) and len(fhir_positive_lgbt_cases_lst) < 10000):
+                    key = state + district
+                    fhir_positive_lgbt_cases_lst.append([key, 1])
+        while(any(obj['relation'] == 'next' for obj in result['link']) and len(fhir_positive_lgbt_cases_lst) < 1000):
             query_url = result['link'][-1]['url']
             result = smart.server.request_json(query_url)
             if result is not None and 'entry' in result.keys():
@@ -282,14 +277,14 @@ def get_dashboard_FHIR_current_data():
                         patient = p.Patient(entry['resource'])
                         state = None
                         district = None
-                        if len(patient.address) > 0:
+                        if patient.address is not None and len(patient.address) > 0:
                             address = patient.address[0]
                             if address.state:
                                 state = address.state
                             if address.district:
                                 district = address.district
-                        key = state + district
-                        fhir_positive_lgbt_cases_lst.append([key, 1])
+                            key = state + district
+                            fhir_positive_lgbt_cases_lst.append([key, 1])
 
         fhir_positive_lgbt_cases_df = pd.DataFrame(fhir_positive_lgbt_cases_lst, columns=['key', 'count'])
         fhir_positive_lgbt_cases_fips_df = pd.merge(fhir_positive_lgbt_cases_df, fips_df, how='inner',
@@ -496,7 +491,7 @@ def update_patients_sexuality(patient_id, sexual_orientation):
 
 
 def patient_search(request):
-    example_patient_id = get_patients_example()
+    #example_patient_id = get_patients_example()
     # submitted = False
     if request.method == 'POST':
         form = PatientSearchForm(request.POST)
@@ -522,7 +517,7 @@ def patient_search(request):
         form = PatientSearchForm()
     return render(request,
                   'patient-search.html',
-                  {'form': form, 'example_patient_id':example_patient_id}
+                  {'form': form, 'example_patient_id':909819}
                   )
 def patient(request):
     # submitted = False
