@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div class="container">
+
+
+
+{% if fhir_cases_map_fig_div %}
+{% autoescape off %}
+  {{ fhir_cases_map_fig_div|safe }}
+  {% endautoescape %}
+{% else %}
+<p>No graph was provided, there may not be data in the FHIR Server. Try Loading data.</p>
+{% endif %}
+
+
+
+
+    </div>
+
+{% endblock %}

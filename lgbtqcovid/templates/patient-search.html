@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+
+<h2>Patient Search Page</h2>
+
+  <div class="grid-container">
+
+    <form action="" method="post" novalidate>
+   <table>
+     {{ form.as_table }}
+     <tr>
+       <td>&nbsp;</td>
+       <td><input type="submit" style="color:black" value="Submit"></td>
+     </tr>
+   </table>
+   {% csrf_token %}
+   </form>
+
+  </div>
+
+    <div>
+        Example Patient ID who has tested positive for covid: {{ example_patient_id }}
+    </div>
+
+</div>
+
+{% endblock %}

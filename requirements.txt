@@ -4,4 +4,4 @@ django-heroku
 plotly
 pandas
 numpy==1.19.3
-fhirclient
+git+https://github.com/smart-on-fhir/client-py@v4.0.0#egg=fhirclient

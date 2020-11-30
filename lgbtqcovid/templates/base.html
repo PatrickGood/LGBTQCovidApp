@@ -53,11 +53,28 @@
       <li>
         <a href="{% url 'patient' %}"><span class="glyphicon glyphicon-user"></span> Patient Page</a>
       </li>
-      <li>
-        <a href="{% url 'dashboard' %}"><span class="glyphicon glyphicon-info-sign"></span> Dashboards</a>
+        <li>
+        <a href="{% url 'patient-search' %}"><span class="glyphicon glyphicon-user"></span> Patient Search</a>
       </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Dashboards <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+{#              <li><a href="{% url 'dashboard-all' %}"><span class="glyphicon glyphicon-info-sign"></span> Dashboards-all</a></li>#}
+              <li><a href="{% url 'dashboard-cases' %}"><span class="glyphicon glyphicon-info-sign"></span> Historical Positive Cases</a></li>
+              <li><a href="{% url 'dashboard-deaths' %}"><span class="glyphicon glyphicon-info-sign"></span> Historical Deaths</a></li>
+              <li><a href="{% url 'dashboard-fhir' %}"><span class="glyphicon glyphicon-info-sign"></span> FHIR Positive Cases</a></li>
+          </ul>
+      </li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Data <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+              <li><a href="{% url 'data-insert-all' %}"><span class="glyphicon glyphicon-info-sign"></span> Insert all data(hours)</a></li>
+              <li><a href="{% url 'data-insert-subset' %}"><span class="glyphicon glyphicon-info-sign"></span> Insert subset data (10 Min.)</a></li>
+          </ul>
+      </li>
+
 {#      <li class="dropdown">#}
-{#        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Resources <span class="caret"></span></a>#}
+{#        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Dashboards <span class="caret"></span></a>#}
 {#          <ul class="dropdown-menu" role="menu">#}
 {#            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-ruby">Getting Started with Ruby on Heroku</a></li>#}
 {#            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started with Node on Heroku</a></li>#}

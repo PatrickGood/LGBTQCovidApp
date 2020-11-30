@@ -22,7 +22,7 @@ admin.autodiscover()
 
 import hello.views
 import lgbtqcovid.views
-
+import lgbtqcovid.patient_form
 # To add a new path, first import the app:
 # import blog
 #
@@ -33,8 +33,14 @@ import lgbtqcovid.views
 
 urlpatterns = [
     path("", lgbtqcovid.views.index, name="index"),
+    path("dashboard-all/", lgbtqcovid.views.dashboard_all, name="dashboard-all"),
+    path("dashboard-fhir/", lgbtqcovid.views.dashboard_fhir, name="dashboard-fhir"),
+    path("dashboard-cases/", lgbtqcovid.views.dashboard_cases, name="dashboard-cases"),
+    path("dashboard-deaths/", lgbtqcovid.views.dashboard_deaths, name="dashboard-deaths"),
+    path("data-insert-all/", lgbtqcovid.views.insert_data, name="data-insert-all"),
+    path("data-insert-subset/", lgbtqcovid.views.insert_data_subset, name="data-insert-subset"),
+    path("patient-search/", lgbtqcovid.views.patient_search, name='patient-search'),
     path("patient/", lgbtqcovid.views.patient, name="patient"),
-    path("dashboard/", lgbtqcovid.views.dashboard, name="dashboard"),
     path("old/", hello.views.index, name="oldindex"),
     path("old/db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
