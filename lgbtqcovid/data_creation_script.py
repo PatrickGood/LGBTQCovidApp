@@ -115,13 +115,11 @@ def create_data(smart):
     final_current_columns = ['state', 'county', 'abbreviation', 'fips', 'lgbt_cases', 'cases']
     final_lgbt_covid_data_current = final_lgbt_covid_data_current[final_current_columns].sort_values(by=['fips'])
 
-
-
-
-
+    sorted_final_lgbt_covid_data_current = final_lgbt_covid_data_current.sort_values(['lgbt_cases'], ascending=False)
+    sorted_final_lgbt_covid_data_current.reset_index(inplace=True)
 
     timeb = time()
-    for index, row in final_lgbt_covid_data_current.iterrows():
+    for index, row in sorted_final_lgbt_covid_data_current.iterrows():
         for i in range(row['lgbt_cases']):
             patient_obj = Patient(i, row['fips'], row['state'], row['county'])
             new_patient = patient_obj.to_fhir_obj()
@@ -216,7 +214,7 @@ class Patient:
 
 
 
-def create_data_if_FHIR_Server_returns(subset):
+def create_data_if_FHIR_Server_returns_none():
     settings = {
         'app_id': 'LGBTQCovidReporting',
         'api_base': 'https://r4.smarthealthit.org'
@@ -228,14 +226,14 @@ def create_data_if_FHIR_Server_returns(subset):
         '/Patient?_has:Condition:patient:code=http://snomed.info/sct|840539006&_has:Condition:patient:verification-status=http://terminology.hl7.org/CodeSystem/condition-ver-status|confirmed&_has:Observation:patient:code=http://loinc.org|76690-7&_has:Observation:patient:value-string=Other,Homosexual,Bisexual',
         smart.server)
     if bundle.entry is None or len(bundle.entry) < 1:
-        create_data(smart, subset)
+        create_data(smart)
 
 if __name__ == "__main__":
-    #create_data_if_FHIR_Server_returns_none()
     settings = {
         'app_id': 'LGBTQCovidReporting',
         'api_base': 'https://r4.smarthealthit.org'
     }
 
     smart = client.FHIRClient(settings=settings)
+    #create_data_if_FHIR_Server_returns_none()
     create_data(smart)

@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ff1fb4a-404d-42a6-93db-01b2c052f326" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lgbtqcovid/data_creation_subset_script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lgbtqcovid/dataCreationScript.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lgbtqcovid/data_creation_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/lgbtqcovid/data_creation_script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lgbtqcovid/templates/all-data.html" beforeDir="false" afterPath="$PROJECT_DIR$/lgbtqcovid/templates/all-data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lgbtqcovid/templates/subset-data.html" beforeDir="false" afterPath="$PROJECT_DIR$/lgbtqcovid/templates/subset-data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lgbtqcovid/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lgbtqcovid/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lgbtqcovid/data_creation_subset_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/lgbtqcovid/data_creation_subset_script.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +52,7 @@
       <recent name="C:\Users\Patrick Good\Desktop\GATECH\IHI\Individual Project\LGBTQCovidApp\lgbtqcovid\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.LGBTQCovidApp">
+  <component name="RunManager" selected="Python.data_creation_subset_script">
     <configuration name="dataCreationScript" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LGBTQCovidApp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,9 +167,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.views" />
-        <item itemvalue="Python.data_creation_script" />
         <item itemvalue="Python.data_creation_subset_script" />
+        <item itemvalue="Python.data_creation_script" />
+        <item itemvalue="Python.views" />
         <item itemvalue="Python.dataCreationScript" />
       </list>
     </recent_temporary>
@@ -197,7 +192,7 @@
       <workItem from="1606085628759" duration="1880000" />
       <workItem from="1606100364354" duration="65000" />
       <workItem from="1606105174722" duration="2430000" />
-      <workItem from="1606587658934" duration="100132000" />
+      <workItem from="1606587658934" duration="103696000" />
     </task>
     <servers />
   </component>
@@ -209,10 +204,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="243" y="280" key="#xdebugger.XInspectDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606686337915" />
-    <state x="1018" y="523" width="786" height="510" key="#xdebugger.evaluate" timestamp="1606724548417">
+    <state x="1018" y="523" width="786" height="510" key="#xdebugger.evaluate" timestamp="1606727929598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1018" y="523" width="786" height="510" key="#xdebugger.evaluate/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724548417" />
+    <state x="1018" y="523" width="786" height="510" key="#xdebugger.evaluate/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727929598" />
     <state x="2729" y="435" width="962" height="586" key="#xdebugger.evaluate/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614184147" />
     <state width="1329" height="466" key="DebuggerActiveHint" timestamp="1606661086582">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -223,45 +218,45 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606100427481" />
-    <state width="1860" height="265" key="GridCell.Tab.0.bottom" timestamp="1606724197034">
+    <state width="1860" height="265" key="GridCell.Tab.0.bottom" timestamp="1606727930504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724197034" />
+    <state width="1860" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727930504" />
     <state width="1860" height="343" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614309169" />
-    <state width="1860" height="265" key="GridCell.Tab.0.center" timestamp="1606724197033">
+    <state width="1860" height="265" key="GridCell.Tab.0.center" timestamp="1606727930503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724197033" />
+    <state width="1860" height="265" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727930503" />
     <state width="1860" height="343" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614309169" />
-    <state width="1860" height="265" key="GridCell.Tab.0.left" timestamp="1606724197033">
+    <state width="1860" height="265" key="GridCell.Tab.0.left" timestamp="1606727930503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724197033" />
+    <state width="1860" height="265" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727930503" />
     <state width="1860" height="343" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614309169" />
-    <state width="1860" height="265" key="GridCell.Tab.0.right" timestamp="1606724197034">
+    <state width="1860" height="265" key="GridCell.Tab.0.right" timestamp="1606727930503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724197034" />
+    <state width="1860" height="265" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727930503" />
     <state width="1860" height="343" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614309169" />
-    <state width="1860" height="265" key="GridCell.Tab.1.bottom" timestamp="1606724202906">
+    <state width="1860" height="265" key="GridCell.Tab.1.bottom" timestamp="1606727936101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724202906" />
+    <state width="1860" height="265" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727936101" />
     <state width="1860" height="343" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614315349" />
-    <state width="1860" height="265" key="GridCell.Tab.1.center" timestamp="1606724202906">
+    <state width="1860" height="265" key="GridCell.Tab.1.center" timestamp="1606727936101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724202906" />
+    <state width="1860" height="265" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727936101" />
     <state width="1860" height="343" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614315349" />
-    <state width="1860" height="265" key="GridCell.Tab.1.left" timestamp="1606724202906">
+    <state width="1860" height="265" key="GridCell.Tab.1.left" timestamp="1606727936101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724202906" />
+    <state width="1860" height="265" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727936101" />
     <state width="1860" height="343" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614315349" />
-    <state width="1860" height="265" key="GridCell.Tab.1.right" timestamp="1606724202906">
+    <state width="1860" height="265" key="GridCell.Tab.1.right" timestamp="1606727936101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="265" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606724202906" />
+    <state width="1860" height="265" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606727936101" />
     <state width="1860" height="343" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1606614315349" />
     <state width="960" height="519" key="XDebugger.FullValuePopup" timestamp="1606719947318">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -328,11 +323,6 @@
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/lgbtqcovid/data_creation_subset_script.py</url>
-          <line>130</line>
-          <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lgbtqcovid/views.py</url>
           <line>493</line>
           <option name="timeStamp" value="168" />
@@ -352,6 +342,16 @@
           <line>391</line>
           <option name="timeStamp" value="171" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lgbtqcovid/data_creation_script.py</url>
+          <line>121</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lgbtqcovid/data_creation_subset_script.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="183" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -367,7 +367,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LGBTQCovidApp$views.coverage" NAME="views Coverage Results" MODIFIED="1606724176229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lgbtqcovid" />
     <SUITE FILE_PATH="coverage/LGBTQCovidApp$dataCreationScript.coverage" NAME="dataCreationScript Coverage Results" MODIFIED="1606663018654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gettingstarted" />
-    <SUITE FILE_PATH="coverage/LGBTQCovidApp$data_creation_subset_script.coverage" NAME="data_creation_subset_script Coverage Results" MODIFIED="1606722595536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lgbtqcovid" />
-    <SUITE FILE_PATH="coverage/LGBTQCovidApp$data_creation_script.coverage" NAME="data_creation_script Coverage Results" MODIFIED="1606722626779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lgbtqcovid" />
+    <SUITE FILE_PATH="coverage/LGBTQCovidApp$data_creation_subset_script.coverage" NAME="data_creation_subset_script Coverage Results" MODIFIED="1606727930356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lgbtqcovid" />
+    <SUITE FILE_PATH="coverage/LGBTQCovidApp$data_creation_script.coverage" NAME="data_creation_script Coverage Results" MODIFIED="1606726917115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lgbtqcovid" />
   </component>
 </project>
